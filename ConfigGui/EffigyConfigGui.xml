@@ -1,0 +1,250 @@
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+
+	<Assets>
+		<Texture name="TextureTypeMouseOver" file="Textures/MouseOver.tga" />
+		<Texture name="TextureTypeFriendly" file="Textures/Friendly.tga" />
+		<Texture name="TextureTypeHostile" file="Textures/Hostile.tga" />
+		<Texture name="TextureTypeFormation" file="Textures/Formation.tga" />
+		<Texture name="TextureTypePet" file="Textures/Pet.tga" />
+	</Assets>
+
+	<Windows>
+		<!-- Label with x and y autoresize -->
+		<Label name="EffigyAutoresizeLabelTemplate" font="font_default_text" textalign="center" autoresize="true" autoresizewidth="true">
+            <Size>
+                <AbsPoint x="260" y="30" />
+            </Size>
+            <Color r="255" g="204" b="102" />
+        </Label>
+		
+		<!-- ColourBox Template for RVAPI_ColorDialog -->
+		<HorizontalResizeImage name="EffigyConfigGuiHorizontalTintable" texture="EA_TintableImage" savesettings="false" handleinput="false">
+			<Size>
+				<AbsPoint x="50" y="6" />
+			</Size>
+			<Sizes left="0" middle="50" right="0" />
+			<TexCoords>
+				<Left x="0" y="0" />
+				<Middle x="0" y="0" />
+				<Right x="0" y="50" />
+			</TexCoords>
+			<TintColor r="255" g="255" b="255" />
+		</HorizontalResizeImage>
+
+		<Window name="EffigyConfigGuiSettingsColorBoxTemplate" handleinput="true" autoresize="true">
+			<Size>
+				<AbsPoint x="66" y="34" />
+			</Size>
+			<!-- 
+			<EventHandlers>
+				<EventHandler event="OnLButtonUp" function="RVF_Modern.OnLButtonUpColorBox" />
+				<EventHandler event="OnMouseOver" function="RVF_Modern.OnMouseOverColorBox"/>
+			</EventHandlers>
+			-->
+			<Windows>
+				<HorizontalResizeImage name="$parentBorder" inherits="EffigyConfigGuiHorizontalTintable">
+					<Size>
+						<AbsPoint x="66" y="34" />
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+					</Anchors>
+					<TintColor r="50" g="50" b="50" />
+					<Windows>
+						<HorizontalResizeImage name="$parentForeground" inherits="EffigyConfigGuiHorizontalTintable">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft">
+									<AbsPoint x="2" y="2" />
+								</Anchor>
+								<Anchor point="bottomright" relativePoint="bottomright">
+									<AbsPoint x="-2" y="-2" />
+								</Anchor>
+							</Anchors>
+							<TintColor r="255" g="255" b="255" />
+						</HorizontalResizeImage>
+					</Windows>
+				</HorizontalResizeImage>
+			</Windows>
+		</Window>
+
+		<!-- This is the Popup Window template -->
+		<Window name="EffigyConfigGuiPopupWindowTemplate" handleinput="true" layer="popup" movable="true" show="false" savesettings="false">
+			<Size>
+				<AbsPoint x="640" y="400" />
+			</Size>
+			<Anchors>
+				<Anchor point="center" relativePoint="center" />
+			</Anchors>
+			<Windows>
+				<Window name="$parentBackground" inherits="EA_Window_DefaultBackgroundFrame" />
+				<Window name="$parentTitleBar" inherits="EA_TitleBar_Default" />
+				<Button name="$parentButtonClose" inherits="EA_Button_DefaultWindowClose" >
+				</Button>
+				<Button name="$parentButtonOK" inherits="EA_Button_DefaultResizeable" >
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright">
+							<AbsPoint x="-20" y="-20" />
+						</Anchor>
+					</Anchors>
+				</Button>				
+			</Windows>
+		</Window>
+		
+		<FullResizeImage name="EffigyConfigGuiTC" inherits="DefaultWindowBackground" handleinput="true">
+			<Size>
+				<AbsPoint x="138" y="100" />
+			</Size>
+			<Windows>
+				<Label name="$parentTitle" inherits="EA_Label_DefaultText" textalign="center">
+					<Size>
+						<AbsPoint x="220" y="30" />
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<AbsPoint x="0" y="10" />
+						</Anchor>
+					</Anchors>
+				</Label>
+				<Button name="$parentButton" inherits="EA_Button_DefaultResizeable" >
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<AbsPoint x="0" y="-10" />
+						</Anchor>
+					</Anchors>
+				</Button>
+			</Windows>
+		</FullResizeImage>
+
+		<Window name="EffigyConfigGuiFrameRowTemplate" handleinput="true">
+			<Size>
+				<AbsPoint x="512" y="81" />
+			</Size>
+			<Windows>
+				<DynamicImage name="$parentBackground" layer="background" handleinput="false">
+					<Size>
+						<AbsPoint x="512" y="81" />
+					</Size>
+					<TexDims x="512" y="81" />
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" />
+					</Anchors>
+				</DynamicImage>
+				<Button name="$parentTemplates" inherits="EA_Button_DefaultResizeable" >
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<AbsPoint x="5" y="-10" />
+						</Anchor>
+					</Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonUp" function="EffigyConfigGui.OnTemplateRow" />
+                    </EventHandlers>
+				</Button>
+				<Label name="$parentLabelName" inherits="EA_Label_DefaultText" textalign="right">
+					<Size>
+						<AbsPoint x="200" y="30" />
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topleft" relativeTo="$parentTemplates">
+							<AbsPoint x="20" y="10" />
+						</Anchor>
+					</Anchors>
+				</Label>
+				<Button name="$parentEdit" inherits="EA_Button_DefaultResizeable" >
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentDelete">
+							<AbsPoint x="0" y="-10" />
+						</Anchor>
+					</Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonUp" function="EffigyConfigGui.OnToggleRowSettings" />
+                    </EventHandlers>
+				</Button>
+				<Button name="$parentDelete" inherits="EA_Button_DefaultResizeable" >
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<AbsPoint x="-10" y="-10" />
+						</Anchor>
+					</Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonUp" function="EffigyConfigGui.OnDeleteRow" />
+                    </EventHandlers>
+				</Button>
+			</Windows>
+		</Window>
+		
+		<ScrollWindow name="EffigyConfigGuiFrameTemplate" childscrollwindow="EffigyConfigGuiSettingsWindowFramesScrollChild" scrollbar="EffigyConfigGuiSettingsWindowFramesScrollbar" lineheight="18">
+			<Size>
+				<AbsPoint y="470" />
+			</Size>
+
+			<Windows>
+				<VerticalScrollbar name="$parentScrollbar" inherits="EA_ScrollBar_DefaultVerticalChain" layer="popup">
+					<Size>
+						<AbsPoint x="20" y="400"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright">
+							<AbsPoint x="4" y="0"/>
+						</Anchor>
+					</Anchors>
+				</VerticalScrollbar>
+				<Window name="$parentScrollChild">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" >
+							<AbsPoint x="0" y="0" />
+						</Anchor>
+						<Anchor point="topright" relativePoint="topright" >
+							<AbsPoint x="-15" y="0" />
+						</Anchor>
+					</Anchors>
+				</Window>
+			</Windows>
+		</ScrollWindow>
+		
+		<!-- This is the complete Settings Window -->
+		<Window name="EffigyConfigGuiSettingsWindow">
+			<Windows>
+				<FullResizeImage name="$parentTCLayouts" inherits="EffigyConfigGuiTC" handleinput="true">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+					</Anchors>
+				</FullResizeImage>
+				<FullResizeImage name="$parentTCMisc" inherits="EffigyConfigGuiTC" handleinput="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topleft" relativeTo="$parentTCLayouts" />
+					</Anchors>
+				</FullResizeImage>
+				<FullResizeImage name="$parentTCStates" inherits="EffigyConfigGuiTC" handleinput="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topleft" relativeTo="$parentTCMisc" />
+					</Anchors>
+				</FullResizeImage>
+				<FullResizeImage name="$parentTCRules" inherits="EffigyConfigGuiTC" handleinput="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topleft" relativeTo="$parentTCStates" />
+					</Anchors>
+				</FullResizeImage>
+				<FullResizeImage name="$parentTCBars" inherits="EffigyConfigGuiTC" handleinput="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topleft" relativeTo="$parentTCRules" />
+					</Anchors>
+				</FullResizeImage>
+				<ScrollWindow name="$parentFrames" inherits="EffigyConfigGuiFrameTemplate">
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="topright" relativeTo="$parentTCBars">
+							<AbsPoint x="-5" y="0" />
+						</Anchor>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+							<AbsPoint x="0" y="-8" />
+						</Anchor>
+					</Anchors>
+				</ScrollWindow>
+			</Windows>
+		</Window>
+		
+
+		
+	</Windows>
+
+</Interface>

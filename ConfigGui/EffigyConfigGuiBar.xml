@@ -1,0 +1,600 @@
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+	<Windows>
+		<!-- Settings templates -->
+		<!-- LibGUI ComboBox OnSelChanged bad WarAPI Workaround -->
+		<ComboBox name="EffigyConfigGuiBarEditBarSettingsComboBoxTemplate" inherits="EA_ComboBox_DefaultResizable" >
+			<EventHandlers>
+				<EventHandler event="OnSelChanged" function="EffigyConfigGui.OnSelChangedEditBarSettings" />
+			</EventHandlers>
+		</ComboBox>
+		
+		<Window name="EffigyConfigGuiBarTemplate" handleinput="true" layer="secondary" movable="true" show="false" savesettings="false">
+			<Size>
+				<!--<AbsPoint x="704" y="575" /> -->
+				<!--<AbsPoint x="704" y="650" /> -->
+				<AbsPoint x="704" y="750" />
+			</Size>
+			<Anchors>
+				<Anchor point="center" relativePoint="center" />
+			</Anchors>
+			<Windows>
+				<Window name="$parentBackground" inherits="EA_Window_DefaultBackgroundFrame" />
+				<Window name="$parentTitleBar" inherits="EA_TitleBar_Default" />
+				<Button name="$parentButtonClose" inherits="EA_Button_DefaultWindowClose" >
+					<EventHandlers>
+						<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickCloseSettings" />
+					</EventHandlers>
+				</Button>
+				<Button name="$parentButtonOK" inherits="EA_Button_DefaultResizeable" >
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright">
+							<AbsPoint x="-20" y="-20" />
+						</Anchor>
+					</Anchors>
+					<EventHandlers>
+						<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickCloseSettings" />
+					</EventHandlers>
+				</Button>
+				<Window name="$parentButtonBackground" inherits="EA_Window_DefaultButtonBottomFrame" layer="background" >
+					<Size>
+						<AbsPoint x="0" y="75" />
+					</Size>
+				</Window>
+
+				<!-- TABS Begin -->
+				<Window name="$parentTab" >
+					<Size>
+						<AbsPoint x="500" y="35" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentTitleBar"/>
+						<Anchor point="bottomright" relativePoint="topright" relativeTo="$parentTitleBar"/>
+					</Anchors>
+					<Windows>
+						<Window name="$parentSeparatorLeft" inherits="EA_Window_TabSeparatorLeftSide" handleinput="true" layer="popup">
+							<Size>
+								<AbsPoint x="14" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo ="$parent">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+								<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentGeneral">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+							</Anchors>
+						</Window>
+						<Button name="$parentGeneral" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft">
+									<AbsPoint x="25" y="0" />
+								</Anchor>
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabGeneral" />
+							</EventHandlers>
+						</Button>
+						<Button name="$parentBar" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentGeneral" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabBar" />
+							</EventHandlers>
+						</Button>
+						<Button name="$parentIcons" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentBar" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabIcons" />
+							</EventHandlers>
+						</Button>
+						<Button name="$parentLabels" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentIcons" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabLabels" />
+							</EventHandlers>
+						</Button>						
+						<Button name="$parentImages" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentLabels" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabImages" />
+							</EventHandlers>
+						</Button>
+						<Window name="$parentSeparatorRight" inherits="EA_Window_TabSeparatorRightSide" layer="background" popable="false">
+							<Size>
+								<AbsPoint x="0" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomleft" relativeTo="$parentImages">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+							</Anchors>
+						</Window>
+					</Windows>
+				</Window>
+				<!-- TABS End -->
+			</Windows>
+		</Window>
+		
+		<Window name="EffigyConfigGuiBarTemplateGeneral" handleinput="true" layer="secondary" movable="false" show="false" savesettings="false">
+			<Size>
+				<AbsPoint x="704" y="435" />
+			</Size>
+			<Anchors>
+				<!-- <Anchor point="center" relativePoint="center" /> -->
+				<Anchor point="topleft" relativePoint="topleft">
+					<AbsPoint x="0" y="70" />
+				</Anchor>
+				<Anchor point="bottomright" relativePoint="bottomright">
+					<AbsPoint x="0" y="-70" />
+				</Anchor>
+			</Anchors>
+			<Windows>
+				<Window name="$parentBackground" inherits="EA_Window_DefaultBackgroundFrame" />
+				<!-- TABS Begin -->
+				<Window name="$parentTab" >
+					<Size>
+						<AbsPoint x="700" y="35" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentTitleBar"/>
+						<Anchor point="bottomright" relativePoint="topright" relativeTo="$parentTitleBar"/>
+					</Anchors>
+					<Windows>
+						<Window name="$parentSeparatorLeft" inherits="EA_Window_TabSeparatorLeftSide" handleinput="true" layer="popup">
+							<Size>
+								<AbsPoint x="14" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo ="$parent">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+								<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentBehaviour">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+							</Anchors>
+						</Window>
+						<Button name="$parentBehaviour" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft">
+									<AbsPoint x="25" y="0" />
+								</Anchor>
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabBehaviour" />
+							</EventHandlers>
+						</Button>
+						<Button name="$parentVisibility" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentBehaviour" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabVisibility" />
+							</EventHandlers>
+						</Button>
+						<Button name="$parentPositioning" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentVisibility" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabPositioning" />
+							</EventHandlers>
+						</Button>
+						<Window name="$parentSeparatorRight" inherits="EA_Window_TabSeparatorRightSide" layer="background" popable="false">
+							<Size>
+								<AbsPoint x="0" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomleft" relativeTo="$parentPositioning">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+							</Anchors>
+						</Window>
+					</Windows>
+				</Window>
+			</Windows>
+		</Window>
+
+		<Window name="EffigyConfigGuiBarTemplateBar" handleinput="true" layer="secondary" movable="false" show="false" savesettings="false">
+			<Size>
+				<AbsPoint x="704" y="435" />
+			</Size>
+			<Anchors>
+				<Anchor point="topleft" relativePoint="topleft">
+					<AbsPoint x="0" y="70" />
+				</Anchor>
+				<Anchor point="bottomright" relativePoint="bottomright">
+					<AbsPoint x="0" y="-70" />
+				</Anchor>
+			</Anchors>
+			<Windows>
+				<Window name="$parentBackground" inherits="EA_Window_DefaultBackgroundFrame" />
+				<!-- TABS Begin -->
+				<Window name="$parentTab" >
+					<Size>
+						<AbsPoint x="700" y="35" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentTitleBar"/>
+						<Anchor point="bottomright" relativePoint="topright" relativeTo="$parentTitleBar"/>
+					</Anchors>
+					<Windows>
+						<Window name="$parentSeparatorLeft" inherits="EA_Window_TabSeparatorLeftSide" handleinput="true" layer="popup">
+							<Size>
+								<AbsPoint x="14" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo ="$parent">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+								<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentFill">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+							</Anchors>
+						</Window>
+						<Button name="$parentFill" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft">
+									<AbsPoint x="25" y="0" />
+								</Anchor>
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabBarFill" />
+							</EventHandlers>
+						</Button>
+						<Button name="$parentBackground" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentFill" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabBarBackground" />
+							</EventHandlers>
+						</Button>
+
+						<Button name="$parentBorder" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentBackground" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabBarBorder" />
+							</EventHandlers>
+						</Button>
+						<Window name="$parentSeparatorRight" inherits="EA_Window_TabSeparatorRightSide" layer="background" popable="false">
+							<Size>
+								<AbsPoint x="0" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomleft" relativeTo="$parentBorder">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+							</Anchors>
+						</Window>
+					</Windows>
+				</Window>
+			</Windows>
+		</Window>
+		
+		<Window name="EffigyConfigGuiBarTemplateIcons" handleinput="true" layer="secondary" movable="false" show="false" savesettings="false">
+			<Size>
+				<AbsPoint x="704" y="435" />
+			</Size>
+			<Anchors>
+				<Anchor point="topleft" relativePoint="topleft">
+					<AbsPoint x="0" y="70" />
+				</Anchor>
+				<Anchor point="bottomright" relativePoint="bottomright">
+					<AbsPoint x="0" y="-70" />
+				</Anchor>
+			</Anchors>
+			<Windows>
+				<Window name="$parentBackground" inherits="EA_Window_DefaultBackgroundFrame" />
+				<!-- TABS Begin -->
+				<Window name="$parentTab" >
+					<Size>
+						<AbsPoint x="700" y="35" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentTitleBar"/>
+						<Anchor point="bottomright" relativePoint="topright" relativeTo="$parentTitleBar"/>
+					</Anchors>
+					<Windows>
+						<Window name="$parentSeparatorLeft" inherits="EA_Window_TabSeparatorLeftSide" handleinput="true" layer="popup">
+							<Size>
+								<AbsPoint x="14" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo ="$parent">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+								<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentCareer">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+							</Anchors>
+						</Window>
+						<Button name="$parentCareer" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft">
+									<AbsPoint x="25" y="0" />
+								</Anchor>
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabIconCareer" />
+							</EventHandlers>
+						</Button>
+						<Button name="$parentRVR" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentCareer" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabIconRVR" />
+							</EventHandlers>
+						</Button>
+						<Button name="$parentStatus" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentRVR" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabIconStatus" />
+							</EventHandlers>
+						</Button>
+						<Window name="$parentSeparatorRight" inherits="EA_Window_TabSeparatorRightSide" layer="background" popable="false">
+							<Size>
+								<AbsPoint x="0" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomleft" relativeTo="$parentStatus">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+							</Anchors>
+						</Window>
+					</Windows>
+				</Window>
+			</Windows>
+		</Window>		
+		
+		<Window name="EffigyConfigGuiBarTemplateLabels" handleinput="true" layer="secondary" movable="false" show="false" savesettings="false">
+			<Size>
+				<AbsPoint x="704" y="435" />
+			</Size>
+			<Anchors>
+				<Anchor point="center" relativePoint="center" />
+			</Anchors>
+			<Windows>
+				<Window name="$parentBackground" inherits="EA_Window_DefaultBackgroundFrame" />
+				<!-- TABS Begin -->
+				<Window name="$parentTab" >
+					<Size>
+						<AbsPoint x="700" y="35" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentTitleBar"/>
+						<Anchor point="bottomright" relativePoint="topright" relativeTo="$parentTitleBar"/>
+					</Anchors>
+					<Windows>
+						<Window name="$parentSeparatorLeft" inherits="EA_Window_TabSeparatorLeftSide" handleinput="true" layer="popup">
+							<Size>
+								<AbsPoint x="14" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo ="$parent">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+								<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parent1">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+							</Anchors>
+						</Window>
+						<Button name="$parent1" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft">
+									<AbsPoint x="25" y="0" />
+								</Anchor>
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabLabel1" />
+							</EventHandlers>
+						</Button>
+						<Button name="$parent2" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parent1" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabLabel2" />
+							</EventHandlers>
+						</Button>
+						<Button name="$parent3" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parent2" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabLabel3" />
+							</EventHandlers>
+						</Button>
+						<Button name="$parent4" inherits="EA_Button_Tab">
+							<Size>
+								<AbsPoint x="124" y="35" />
+							</Size>
+							<TextOffset x="0" y="0" />
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parent3" />
+							</Anchors>
+							<EventHandlers>
+								<EventHandler event="OnLButtonUp" function="EffigyConfigGui.EditBarPanel.OnClickTabLabel4" />
+							</EventHandlers>
+						</Button>
+						<Window name="$parentSeparatorRight" inherits="EA_Window_TabSeparatorRightSide" layer="background" popable="false">
+							<Size>
+								<AbsPoint x="0" y="20" />
+							</Size>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomleft" relativeTo="$parent4">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+									<AbsPoint x="0" y="14" />
+								</Anchor>
+							</Anchors>
+						</Window>
+					</Windows>
+				</Window>
+			</Windows>
+		</Window>
+
+		<Window name="EffigyConfigGuiBarTemplateImages" handleinput="true" layer="secondary" movable="false" show="false" savesettings="false">
+			<Size>
+				<AbsPoint x="878" y="178"/>
+			</Size>
+			<Anchors>
+				<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentCriteria">
+					<AbsPoint x="0" y="0" />
+				</Anchor>
+			</Anchors>
+			<Windows>
+				<Window name="$parentSpecialBackground" inherits="EA_Window_DefaultButtonBottomFrame" layer="background" >
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent" >
+						<AbsPoint x="0" y="-4" />
+					</Anchor>
+					<Size>
+						<AbsPoint x="0" y="190" />
+					</Size>
+				</Window>
+				<VerticalResizeImage name="$parentDivider" inherits="EA_VerticalResizeImage_DefaultVerticalSeparatorMiddle" layer="secondary">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft">
+							<AbsPoint x="42" y="0" />
+						</Anchor>
+						<Anchor point="bottomleft" relativePoint="bottomleft">
+							<AbsPoint x="42" y="-6" />
+						</Anchor>
+					</Anchors>
+				</VerticalResizeImage>
+				<DynamicImage name="$parentAdd" id="11">
+					<Size>
+						<AbsPoint x="24" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<AbsPoint x="13" y="20" />
+						</Anchor>
+					</Anchors>
+				</DynamicImage>
+				<DynamicImage name="$parentRemove" id="12">
+					<Size>
+						<AbsPoint x="24" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentAdd">
+							<AbsPoint x="0" y="10" />
+						</Anchor>
+					</Anchors>
+				</DynamicImage>
+				<DynamicImage name="$parentUp" texture="shared_01" slice="UP-arrow-depressed" id="13">
+					<Size>
+						<AbsPoint x="24" y="24" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentRemove">
+							<AbsPoint x="0" y="10" />
+						</Anchor>
+					</Anchors>
+				</DynamicImage>
+				<DynamicImage name="$parentDown" texture="shared_01" slice="DOWN-arrow-depressed" id="14">
+					<Size>
+						<AbsPoint x="24" y="24" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentUp">
+							<AbsPoint x="0" y="10" />
+						</Anchor>
+					</Anchors>
+				</DynamicImage>
+			</Windows>
+		</Window>
+	</Windows>
+</Interface>

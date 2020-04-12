@@ -1,0 +1,63 @@
+Unless otherwise noted all files are copyright and all rights reserved by their owners/creators.
+
+
+The file: 
+LibSharedAssets.lua
+
+are redistributed under the zlib/libpng License. 
+For details see http://war.curseforge.com/projects/libsharedassets/
+
+
+
+The file:
+LibStub.lua
+is redistributed as public domain.
+See http://war.curseforge.com/projects/libstub/
+
+
+
+The files:
+Textures\orb_debuff_glow.tga
+Textures\orb_lowhp_glow.tga
+Textures\ORBFILL.tga
+Textures\ORBFILL2.tga
+Textures\ORBFILL3.tga
+Textures\ORBFILL4.tga
+Textures\ORBGLOSS.tga
+
+are created and copyright zork.The textures are released under The BSD License 
+For details about their license see http://code.google.com/p/rothui/.
+
+
+
+The file:
+Textures\TargetRing.dds
+
+is created and copyright talvinen. 
+For details about their license see http://war.curseforge.com/projects/targetrings/
+
+
+
+The files:
+textures\Aluminium.tga
+textures\Charcoal.tga
+textures\Cilo.tga
+textures\Dabs.tga
+textures\Gloss.tga
+textures\Graphite.tga
+textures\Healbot.tga
+textures\Melli.tga
+textures\MelliDark.tga
+textures\MelliDarkRough.tga
+textures\Minimalist.tga
+textures\Otravi.tga
+textures\Outline.tga
+textures\Rain.tga
+textures\Runes.tga
+textures\Smooth.tga
+textures\Smoothv2.tga
+textures\Steel.tga
+textures\Water.tga
+
+where taken from SharedAssestsSquared. Thank you Aiiane for granting the permission to redistribute them.
+

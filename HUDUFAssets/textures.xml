@@ -1,0 +1,83 @@
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+   <Assets>
+		<Texture name="SharedMediaOrbDebuffGlow" file="textures\orb_debuff_glow.tga" />
+		<Texture name="SharedMediaOrbLowhpGlow" file="textures\orb_lowhp_glow.tga" />
+		<Texture name="SharedMediaOrbFill" file="textures\ORBFILL.tga" />
+		<Texture name="SharedMediaOrbFill2" file="textures\ORBFILL2.tga" />	
+		<Texture name="SharedMediaOrbFill3" file="textures\ORBFILL3.tga" />
+		<Texture name="SharedMediaOrbFill4" file="textures\ORBFILL4.tga" />
+		<Texture name="SharedMediaOrbGloss" file="textures\ORBGLOSS.tga" />
+		<Texture name="SharedMediaTargetRing" file="textures\TargetRing.dds" />
+		<Texture name="SharedMediaClover1" file="textures\clover1.tga" />
+		<Texture name="SharedMediaClover2" file="textures\clover2.tga" />
+		<Texture name="SharedMediaClover3" file="textures\clover3.tga" />
+		<Texture name="SharedMediaClover4" file="textures\clover4.tga" />
+		<Texture name="SharedMediaClover5" file="textures\clover5.tga" />
+		
+		<!--Textures from SharedAssetsSquared -->
+		<Texture name="SharedMediaAluminium" file="textures\Aluminium.tga" />
+		<Texture name="SharedMediaCharcoal" file="textures\Charcoal.tga" />
+		<Texture name="SharedMediaCilo" file="textures\Cilo.tga" />
+		<Texture name="SharedMediaDabs" file="textures\Dabs.tga" />
+		<Texture name="SharedMediaGloss" file="textures\Gloss.tga" />
+		<Texture name="SharedMediaGraphite" file="textures\Graphite.tga" />
+		<Texture name="SharedMediaHealbot" file="textures\Healbot.tga" />
+		<Texture name="SharedMediaMelli" file="textures\Melli.tga" />
+		<Texture name="SharedMediaMelliDark" file="textures\MelliDark.tga" />
+		<Texture name="SharedMediaMelliDarkRough" file="textures\MelliDarkRough.tga" />
+		<Texture name="SharedMediaMinimalist" file="textures\Minimalist.tga" />
+		<Texture name="SharedMediaOtravi" file="textures\Otravi.tga" />
+		<Texture name="SharedMediaOutline" file="textures\Outline.tga" />
+		<Texture name="SharedMediaRain" file="textures\Rain.tga" />
+		<Texture name="SharedMediaRunes" file="textures\Runes.tga" />
+		<Texture name="SharedMediaSmooth" file="textures\Smooth.tga" />
+		<Texture name="SharedMediaSmoothv2" file="textures\Smoothv2.tga" />
+		<Texture name="SharedMediaSteel" file="textures\Steel.tga" />
+		<Texture name="SharedMediaWater" file="textures\Water.tga" />
+		
+		<!--Textures from Yakui -->
+		<Texture name="SharedMediaYCastbarBG" file="textures\CastbarBackground.tga" />
+		<Texture name="SharedMediaYGroupIconShape" file="textures\GroupIconShape.tga" />
+		<Texture name="SharedMediaYBar1" file="textures\UnitframeForeground1.tga" />
+		<Texture name="SharedMediaYCastbar1" file="textures\CastbarForeground1.tga" />
+		<Texture name="SharedMediaYBar2" file="textures\UnitframeForeground2.tga" />
+		<Texture name="SharedMediaYCastbar2" file="textures\CastbarForeground2.tga" />
+		<Texture name="SharedMediaYBar3" file="textures\UnitframeForeground3.tga" />
+		<Texture name="SharedMediaYCastbar3" file="textures\CastbarForeground3.tga" />
+		<Texture name="SharedMediaYBar4" file="textures\UnitframeForeground4.tga" />
+		<Texture name="SharedMediaYCastbar4" file="textures\CastbarForeground4.tga" />
+		<Texture name="SharedMediaYBar5" file="textures\UnitframeForeground5.tga" />
+		<Texture name="SharedMediaYCastbar5" file="textures\CastbarForeground5.tga" />
+		
+		<!-- Textures from xHUD -->
+		<Texture name="xHUD_LeftRoundBarBG" file="Textures\xHUD\LeftRoundBarBG.dds" />
+		<Texture name="xHUD_LeftRoundBarFG" file="Textures\xHUD\LeftRoundBarFG.dds" />
+		<Texture name="xHUD_RightRoundBarBG" file="Textures\xHUD\RightRoundBarBG.dds" />
+		<Texture name="xHUD_RightRoundBarFG" file="Textures\xHUD\RightRoundBarFG.dds" />
+
+		<Texture name="xHUD_LeftGlowArcBG" file="Textures\xHUD\LeftGlowArcBG.dds" />
+		<Texture name="xHUD_LeftGlowArcFG" file="Textures\xHUD\LeftGlowArcFG.dds" />
+		<Texture name="xHUD_RightGlowArcBG" file="Textures\xHUD\RightGlowArcBG.dds" />
+		<Texture name="xHUD_RightGlowArcFG" file="Textures\xHUD\RightGlowArcFG.dds" />
+
+		<Texture name="xHUD_HorizontalFuzzyBarBG" file="Textures\xHUD\HorizontalFuzzyBarBG.dds" />
+		<Texture name="xHUD_HorizontalFuzzyBarFG" file="Textures\xHUD\HorizontalFuzzyBarFG.dds" />
+		<Texture name="xHUD_VerticalFuzzyBarBG" file="Textures\xHUD\VerticalFuzzyBarBG.dds" />
+		<Texture name="xHUD_VerticalFuzzyBarFG" file="Textures\xHUD\VerticalFuzzyBarFG.dds" />
+
+		<Texture name="xHUD_SancOrbBG" file="Textures\xHUD\SancOrbBG.dds" /> 
+		<Texture name="xHUD_SancOrbFG" file="Textures\xHUD\SancOrbFG.dds" /> 
+		<Texture name="xHUD_SancCenterFG" file="Textures\xHUD\SancCenterFG.dds" /> 
+		<Texture name="xHUD_SancCenterBG" file="Textures\xHUD\SancCenterBG.dds" /> 
+
+		<Texture name="xHUD_LeftMetalBG" file="Textures\xHUD\LeftMetalBG.tga" />
+		<Texture name="xHUD_LeftMetalFG" file="Textures\xHUD\LeftMetalFG.tga" />
+		<Texture name="xHUD_RightMetalBG" file="Textures\xHUD\RightMetalBG.tga" />
+		<Texture name="xHUD_RightMetalFG" file="Textures\xHUD\RightMetalFG.tga" />
+
+		<Texture name="xHUD_LeftPlainBG" file="Textures\xHUD\LeftPlainBG.tga" />
+		<Texture name="xHUD_LeftPlainFG" file="Textures\xHUD\LeftPlainFG.tga" />
+		<Texture name="xHUD_RightPlainBG" file="Textures\xHUD\RightPlainBG.tga" />
+		<Texture name="xHUD_RightPlainFG" file="Textures\xHUD\RightPlainFG.tga" />
+   </Assets>
+</Interface>

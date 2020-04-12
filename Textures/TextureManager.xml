@@ -1,0 +1,37 @@
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+
+	<Assets>
+		<Texture name="XPerl_StatusBar" file="Textures\XPerl_StatusBar.dds" />
+		<Texture name="XPerl_StatusBar2" file="Textures\XPerl_StatusBar2.dds" />
+		<Texture name="XPerl_StatusBar3" file="Textures\XPerl_StatusBar3.dds" />
+		<Texture name="XPerl_StatusBar4" file="Textures\XPerl_StatusBar4.dds" />
+		<Texture name="XPerl_StatusBar5" file="Textures\XPerl_StatusBar5.dds" />
+		<Texture name="XPerl_StatusBar6" file="Textures\XPerl_StatusBar6.dds" />
+		<Texture name="XPerl_StatusBar7" file="Textures\XPerl_StatusBar7.dds" />
+		<Texture name="XPerl_StatusBar8" file="Textures\XPerl_StatusBar8.dds" />
+		<Texture name="XPerl_StatusBar9" file="Textures\XPerl_StatusBar9.dds" />
+		<Texture name="XPerl_StatusBar10" file="Textures\XPerl_StatusBar10.dds" />
+		<Texture name="Statusbar1" file="Textures\Statusbar.dds" />
+		<Texture name="Gloss" file="Textures\gloss.dds" />
+		<Texture name="Statusbar" file="Textures\highlightTexV.dds" />
+		<Texture name="rothTex" file="Textures\rothTex.dds" />
+		<Texture name="rothTexV" file="Textures\rothTexV.dds" />
+		<Texture name="Statusbar2" file="Textures\statusbar2.dds" />
+		
+		<Texture name="LiquidUFBG" file="Textures\LiquidTheme\UFBG.tga" />
+		<Texture name="LiquidUFFX" file="Textures\LiquidTheme\UFFX.tga" />
+		<Texture name="LiquidBar" file="Textures\LiquidTheme\UFBar.tga" />
+		<Texture name="LiquidCBBar" file="Textures\LiquidTheme\CBBar.tga" />
+		<Texture name="LiquidCBBarEnd" file="Textures\LiquidTheme\CBBarEnd.tga" />
+		<Texture name="LiquidCBBG" file="Textures\LiquidTheme\CBBG.tga" />
+		<Texture name="LiquidCBFX" file="Textures\LiquidTheme\CBFX.tga" />
+		<Texture name="LiquidIPBG" file="Textures\LiquidTheme\IPBG.tga" />
+		<Texture name="LiquidIPFX" file="Textures\LiquidTheme\IPFX.tga" />
+		
+		<Texture name="GroupIcon Gloss" file="Textures\LiquidTheme\GroupIcon Gloss.tga" />
+		<Texture name="GroupIcon Shape" file="Textures\LiquidTheme\GroupIcon Shape.tga" />
+		
+	</Assets>
+
+
+</Interface>

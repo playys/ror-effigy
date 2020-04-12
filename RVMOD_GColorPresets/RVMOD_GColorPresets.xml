@@ -1,0 +1,62 @@
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+
+	<Windows>
+		<!-- ColourBox Template for RVAPI_ColorDialog -->
+		<HorizontalResizeImage name="RVMOD_GColorPresetsHorizontalTintable" texture="EA_TintableImage" savesettings="false" handleinput="false">
+			<Size>
+				<AbsPoint x="50" y="6" />
+			</Size>
+			<Sizes left="0" middle="50" right="0" />
+			<TexCoords>
+				<Left x="0" y="0" />
+				<Middle x="0" y="0" />
+				<Right x="0" y="50" />
+			</TexCoords>
+			<TintColor r="255" g="255" b="255" />
+		</HorizontalResizeImage>
+
+		<Window name="RVMOD_GColorPresetsSettingsColorBoxTemplate" handleinput="true" autoresize="true">
+			<Size>
+				<AbsPoint x="66" y="34" />
+			</Size>
+			<!-- 
+			<EventHandlers>
+				<EventHandler event="OnLButtonUp" function="RVF_Modern.OnLButtonUpColorBox" />
+				<EventHandler event="OnMouseOver" function="RVF_Modern.OnMouseOverColorBox"/>
+			</EventHandlers>
+			-->
+			<Windows>
+				<HorizontalResizeImage name="$parentBorder" inherits="RVMOD_GColorPresetsHorizontalTintable">
+					<Size>
+						<AbsPoint x="66" y="34" />
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+					</Anchors>
+					<TintColor r="50" g="50" b="50" />
+					<Windows>
+						<HorizontalResizeImage name="$parentForeground" inherits="RVMOD_GColorPresetsHorizontalTintable">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft">
+									<AbsPoint x="2" y="2" />
+								</Anchor>
+								<Anchor point="bottomright" relativePoint="bottomright">
+									<AbsPoint x="-2" y="-2" />
+								</Anchor>
+							</Anchors>
+							<TintColor r="255" g="255" b="255" />
+						</HorizontalResizeImage>
+					</Windows>
+				</HorizontalResizeImage>
+			</Windows>
+		</Window>
+
+		<ComboBox name="RVMOD_GColorPresetsComboBoxTemplate" inherits="EA_ComboBox_DefaultResizable" >
+			<EventHandlers>
+				<EventHandler event="OnSelChanged" function="RVMOD_GColorPresets.OnSelChangedEditColorComboBox" />
+			</EventHandlers>
+		</ComboBox>
+
+	</Windows>
+
+</Interface>

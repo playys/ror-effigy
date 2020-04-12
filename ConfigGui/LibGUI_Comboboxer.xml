@@ -1,0 +1,34 @@
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+	<Windows>
+		<ComboBox name ="LibGUI_ComboBox_DefaultResizable_Template" inherits="EA_ComboBox_DefaultResizable">
+			<EventHandlers>
+				<EventHandler event="OnSelChanged" function="LibGUIComboboxer.OnSelChanged" />
+			</EventHandlers>
+		</ComboBox>
+		<ComboBox name ="LibGUI_ComboBox_DefaultResizableMediumLarge_Template" inherits="EA_ComboBox_DefaultResizableMediumLarge">
+			<EventHandlers>
+				<EventHandler event="OnSelChanged" function="LibGUIComboboxer.OnSelChanged" />
+			</EventHandlers>
+		</ComboBox>
+		<ComboBox name ="LibGUI_ComboBox_DefaultResizableMedium_Template" inherits="EA_ComboBox_DefaultResizableMedium">
+			<EventHandlers>
+				<EventHandler event="OnSelChanged" function="LibGUIComboboxer.OnSelChanged" />
+			</EventHandlers>
+		</ComboBox>
+		<ComboBox name ="LibGUI_ComboBox_DefaultResizableSmall_Template" inherits="EA_ComboBox_DefaultResizableSmall">
+			<EventHandlers>
+				<EventHandler event="OnSelChanged" function="LibGUIComboboxer.OnSelChanged" />
+			</EventHandlers>
+		</ComboBox>
+		<ComboBox name ="LibGUI_ComboBox_DefaultResizableTiny_Template" inherits="EA_ComboBox_DefaultResizableTiny">
+			<EventHandlers>
+				<EventHandler event="OnSelChanged" function="LibGUIComboboxer.OnSelChanged" />
+			</EventHandlers>
+		</ComboBox>
+		<ComboBox name ="LibGUI_ComboBox_DefaultResizableLarge_Template" inherits="EA_ComboBox_DefaultResizableLarge">
+			<EventHandlers>
+				<EventHandler event="OnSelChanged" function="LibGUIComboboxer.OnSelChanged" />
+			</EventHandlers>
+		</ComboBox>
+	</Windows>
+</Interface>

@@ -1,0 +1,160 @@
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+	<Windows>
+		
+		<Window name="EffigyBarTemplate" layer="default" popable="false" movable="false" sticky="true"> <!--savesettings="true"--> 
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="root" />
+			</Anchors> 
+			<Size>
+				<AbsPoint x="20" y="350" />
+			</Size>
+			<EventHandlers>
+				<EventHandler event="OnLButtonDown" function="Effigy.LButtonDown" />
+				<EventHandler event="OnLButtonUp" function="Effigy.LButtonUp" />
+				<EventHandler event="OnRButtonUp" function="Effigy.RButtonUp" />
+				<EventHandler event="OnMouseOver" function="Effigy.MouseOver" />
+			</EventHandlers>
+
+			<Windows>
+				<DynamicImage name="$parentBorder" layer="background" texture="EA_TintableImage" handleinput="false">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" />
+					</Anchors>
+				</DynamicImage>
+				
+				<DynamicImage name="$parentBG" layer="default" handleinput="false" sticky="true">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" />
+					</Anchors>
+				</DynamicImage>
+
+				<Window name="$parentFG" layer="default" texture="EA_TintableImage" handleinput="false" sticky="true">
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" />
+					</Anchors>
+					<Windows>
+						<DynamicImage name="$parentFill" layer="default" texture="EA_TintableImage" handleinput="false" sticky="true">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" />
+							</Anchors>
+						</DynamicImage>
+					</Windows>
+				</Window>
+			</Windows>
+		</Window>
+
+		<Window name="FrameTan" inherits="EA_Window_Default" movable="false" layer="background"> 
+			<Windows>
+				<FullResizeImage name="$parentBack" inherits="EA_FullResizeImage_TanBorder">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft" />
+						<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright" />
+					</Anchors>
+				</FullResizeImage>
+			</Windows>
+		</Window>
+
+		<Window name="FrameDefault" inherits="EA_Window_Default" movable="false" layer="background"> 
+			<Windows>
+				<FullResizeImage name="$parentBack" inherits="EA_FullResizeImage_TintableFrame">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft" />
+						<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright" />
+					</Anchors>
+				</FullResizeImage>
+			</Windows>
+		</Window>
+
+		<Window name="FrameBubble" inherits="EA_Window_Default" movable="false" layer="background"> 
+			<Windows>
+				<FullResizeImage name="$parentBack" inherits="EA_FullResizeImage_DefaultBubbleBackground" frameonly="true">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft" />
+						<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright" />
+					</Anchors>
+				</FullResizeImage>
+			</Windows>
+		</Window>
+
+		<Window name="FrameBubble2" inherits="EA_Window_Default" movable="false" layer="background"> 
+			<Windows>
+				<FullResizeImage name="$parentBack" inherits="EA_FullResizeImage_AlertBubbleBackground" frameonly="true">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft" />
+						<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright" />
+					</Anchors>
+				</FullResizeImage>
+			</Windows>
+		</Window>
+
+		<Window name="FrameMetal" inherits="EA_Window_Default" movable="false" layer="background"> 
+			<Windows>
+				<FullResizeImage name="$parentBack" inherits="EA_FullResizeImage_MetalFill" frameonly="true">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft" />
+						<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright" />
+					</Anchors>
+				</FullResizeImage>
+			</Windows>
+		</Window>
+
+		<Window name="FrameIcon" inherits="EA_Window_Default" movable="false" layer="background"> 
+			<Windows>
+				<FullResizeImage name="$parentBack" inherits="EA_Button_ResizeIconFrameNormal" frameonly="true">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft" />
+						<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright" />
+					</Anchors>
+				</FullResizeImage>
+			</Windows>
+		</Window>
+
+		<Window name="EffigyEmpty" movable="false" layout="background" handleinput="false" popable="false">
+		</Window>
+        <Window name="EffigyActionProxy" handleinput="true" popable="false" savesettings="false">
+            <Size>
+                <AbsPoint x="1" y="1" />
+            </Size>
+            <Anchors>
+                <Anchor point="topleft" relativePoint="topleft" relativeTo="Root">
+                    <AbsPoint x="0" y="0" />
+                </Anchor>
+            </Anchors>
+            <Windows>
+				<DynamicImage name="$parentAction" layer="background" texture="EA_TintableImage" handleinput="true" alpha="0.0" savesettings="false">
+				    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <AbsPoint x="0" y="0" />
+                        </Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                            <AbsPoint x="0" y="0" />
+                        </Anchor>
+                    </Anchors>
+				</DynamicImage>
+            </Windows>
+        </Window>
+		<Window name="EffigyNub" movable="false" layout="background" handleinput="false" popable="false" savesettings="true">
+			<Size>
+				<AbsPoint x="100" y="20" />
+			</Size>
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="Root" />
+			</Anchors>
+			<Windows>
+				<Label name="$parentName" inherits="DefaultWindowSmallText" textalign="center" warnOnTextCropped="false">
+					<Size>
+						<AbsPoint x="100" y="24" />
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parent" />
+					</Anchors>
+				</Label>
+			</Windows>
+		</Window>
+
+	</Windows>
+</Interface>
+
