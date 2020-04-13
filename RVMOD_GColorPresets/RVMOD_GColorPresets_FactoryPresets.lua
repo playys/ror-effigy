@@ -128,6 +128,150 @@ function Addon.GetFactoryPresets()
 			b = 0,
 			a = 1,
 		},
+		["career-ib"] = 
+		{
+			name = "career-ib",
+			r = 155, g = 82, b = 65,
+			a = 1,
+		},
+		["career-sla"] = 
+		{
+			name = "career-sla",
+			r = 179, g = 1, b = 1,
+			a = 1,
+		},
+		["career-rp"] = 
+		{
+			name = "career-rp",
+			r = 246, g = 227, b = 148,
+			a = 1,
+		},
+		["career-eng"] = 
+		{
+			name = "career-eng",
+			r = 232, g = 181, b = 128,
+			a = 1,
+		},
+		["career-bo"] = 
+		{
+			name = "career-bo",
+			r =  51, g = 115, b =  21,
+			a = 1,
+		},
+		["career-cop"] = 
+		{
+			name = "career-cop",
+			r = 147, g = 200, b = 120,
+			a = 1,
+		},
+		["career-sha"] = 
+		{
+			name = "career-sha",
+			r = 147, g = 200, b = 120,
+			a = 1,
+		},
+		["career-sh"] = 
+		{
+			name = "career-sh",
+			r =  60, g =  96, b =  48,
+			a = 1,
+		},
+		["career-wh"] = 
+		{
+			name = "career-wh",
+			r = 150, g =  26, b =  18,
+			a = 1,
+		},
+		["career-kn"] = 
+		{
+			name = "career-kn",
+			r = 246, g = 106, b =  19,
+			a = 1,
+		},
+		["career-bw"] = 
+		{
+			name = "career-bw",
+			r = 255, g =  37, b =  10,
+			a = 1,
+		},
+		["career-wp"] = 
+		{
+			name = "career-wp",
+			r = 237, g = 129, b = 100,
+			a = 1,
+		},
+		["career-cho"] = 
+		{
+			name = "career-cho",
+			r =  86, g =  89, b =  96,
+			a = 1,
+		},
+		["career-mar"] = 
+		{
+			name = "career-mar",
+			r = 177, g = 136, b = 134,
+			a = 1,
+		},
+		["career-zel"] = 
+		{
+			name = "career-zel",
+			r = 144, g = 142, b = 145,
+			a = 1,
+		},
+		["career-mag"] = 
+		{
+			name = "career-mag",
+			r =  44, g =  81, b = 136,
+			a = 1,
+		},
+		["career-sm"] = 
+		{
+			name = "career-sm",
+			r =  52, g =  96, b = 159,
+			a = 1,
+		},
+		["career-sw"] = 
+		{
+			name = "career-sw",
+			r =  60, g =  61, b =  78,
+			a = 1,
+		},
+		["career-wl"] = 
+		{
+			name = "career-wl",
+			r = 227, g = 240, b = 246,
+			a = 1,
+		},
+		["career-am"] = 
+		{
+			name = "career-am",
+			r = 175, g = 206, b = 234,
+			a = 1,
+		},
+		["career-bg"] = 
+		{
+			name = "career-bg",
+			r =  88, g =  17, b =  76,
+			a = 1,
+		},
+		["career-we"] = 
+		{
+			name = "career-we",
+			r = 188, g = 106, b = 204,
+			a = 1,
+		},
+		["career-dok"] = 
+		{
+			name = "career-dok",
+			r = 204, g =  43, b = 211,
+			a = 1,
+		},
+		["career-src"] = 
+		{
+			name = "career-src",
+			r =  92, g =  24, b = 125,
+			a = 1,
+		},
 		["archtype-heal"] = 
 		{
 			name = "archtype-heal",
